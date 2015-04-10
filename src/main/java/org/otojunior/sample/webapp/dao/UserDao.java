@@ -2,6 +2,7 @@ package org.otojunior.sample.webapp.dao;
 
 import java.util.List;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
@@ -17,6 +18,7 @@ import org.otojunior.sample.webapp.entity.User;
  * 
  * @author [Author name]
  */
+@Stateless
 public class UserDao {
 	/**
 	 * Injected Entity Manger.
