@@ -1,10 +1,9 @@
 /**
  * 
  */
-package org.otojunior.sample.webapp;
+package org.otojunior.sample.webapp.mbeans;
 
 import javax.enterprise.inject.Model;
-import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
 
 import org.apache.commons.lang3.time.DateUtils;
@@ -18,16 +17,9 @@ public class TesteBean {
 	@Inject
 	private DateUtils dateutils;
 	
-	public String getTexto() {
-		return "texto de teste de injeção";
-	}
-
 	public DateUtils getUtilitario() {
 		return dateutils;
 	}
 	
-	@Produces
-	public DateUtils produzir() {
-		return new DateUtils();
-	}
+	
 }
