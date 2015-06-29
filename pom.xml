@@ -33,6 +33,7 @@
 		<dependency.version.commons-codec>1.9</dependency.version.commons-codec>
 		<dependency.version.jquery>2.1.1</dependency.version.jquery>
 		<dependency.version.javaee-api>6.0</dependency.version.javaee-api>
+		<dependency.version.quartz>2.2.1</dependency.version.quartz>
 		<plugin.version.java>1.7</plugin.version.java>
 		<plugin.version.maven-compiler-plugin>3.1</plugin.version.maven-compiler-plugin>
 		<plugin.version.maven-war-plugin>2.4</plugin.version.maven-war-plugin>
@@ -90,77 +91,76 @@
 			<version>${dependency.version.junit}</version>
 			<scope>test</scope>
 		</dependency>
-		
 		<dependency>
 		    <groupId>org.hibernate</groupId>
 		    <artifactId>hibernate-validator</artifactId>
 		    <version>${dependency.version.hibernate.validator}</version>
 		    <scope>test</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
 			<version>${dependency.version.logback}</version>
 			<scope>test</scope>
 		</dependency>
-		
 		<dependency>
 		    <groupId>org.easymock</groupId>
 		    <artifactId>easymock</artifactId>
 		    <version>${dependency.version.easymock}</version>
 		    <scope>test</scope>
 		</dependency>
-		
 		<dependency>
 			<groupId>org.powermock</groupId>
 			<artifactId>powermock-module-junit4</artifactId>
 			<version>${dependency.version.powermock}</version>
 			<scope>test</scope>
 		</dependency>
-		
 		<dependency>
 			<groupId>org.powermock</groupId>
 			<artifactId>powermock-api-easymock</artifactId>
 			<version>${dependency.version.powermock}</version>
 			<scope>test</scope>
 		</dependency>
-		
 		<dependency>
 		    <groupId>com.h2database</groupId>
 		    <artifactId>h2</artifactId>
 		    <version>${dependency.version.h2}</version>
 		    <scope>test</scope>
 		</dependency>
-				
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 			<version>${dependency.version.slf4j}</version>
 		</dependency>
-
 		<dependency>
 		    <groupId>org.apache.commons</groupId>
 		    <artifactId>commons-lang3</artifactId>
 		    <version>${dependency.version.commons-lang3}</version>
 		</dependency>
-		
 		<dependency>
 		    <groupId>org.apache.commons</groupId>
 		    <artifactId>commons-collections4</artifactId>
 		    <version>${dependency.version.commons-collections4}</version>
 		</dependency>
-		
 		<dependency>
 		    <groupId>commons-codec</groupId>
 		    <artifactId>commons-codec</artifactId>
 		    <version>${dependency.version.commons-codec}</version>
 		</dependency>
-
 		<dependency>
 		    <groupId>org.webjars</groupId>
 		    <artifactId>jquery</artifactId>
 		    <version>${dependency.version.jquery}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.quartz-scheduler</groupId>
+		    <artifactId>quartz</artifactId>
+		    <version>${dependency.version.quartz}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.quartz-scheduler</groupId>
+		    <artifactId>quartz-jobs</artifactId>
+		    <version>${dependency.version.quartz}</version>
 		</dependency>
 	</dependencies>
 

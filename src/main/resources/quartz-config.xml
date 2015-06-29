@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<job-scheduling-data
+	xmlns="http://www.quartz-scheduler.org/xml/JobSchedulingData"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.quartz-scheduler.org/xml/JobSchedulingData 
+	http://www.quartz-scheduler.org/xml/job_scheduling_data_1_8.xsd"
+	version="1.8">
+
+	<schedule>
+		<job>
+			<name>JobA</name>
+			<group>ExampleGroup</group>
+			<description>Job A Description</description>
+			<job-class>org.otojunior.sample.webapp.job.JobA</job-class>
+		</job>
+
+		<trigger>
+			<cron>
+				<name>ExampleTriggerA</name>
+				<job-name>JobA</job-name>
+				<job-group>ExampleGroup</job-group>
+				<!-- Execution every 15 seconds -->
+				<cron-expression>0/15 * * * * ?</cron-expression>
+			</cron>
+		</trigger>
+	</schedule>
+
+	<schedule>
+		<job>
+			<name>JobB</name>
+			<group>ExampleGroup</group>
+			<description>Job B Description</description>
+			<job-class>org.otojunior.sample.webapp.job.JobB</job-class>
+		</job>
+
+		<trigger>
+			<cron>
+				<name>ExampleTriggerB</name>
+				<job-name>JobB</job-name>
+				<job-group>ExampleGroup</job-group>
+				<!-- Execution every 5 seconds -->
+				<cron-expression>0/5 * * * * ?</cron-expression>
+			</cron>
+		</trigger>
+	</schedule>
+</job-scheduling-data>
