@@ -20,7 +20,7 @@
 				<job-name>JobA</job-name>
 				<job-group>ExampleGroup</job-group>
 				<!-- Execution every 15 seconds -->
-				<cron-expression>0/15 * * * * ?</cron-expression>
+				<cron-expression>0/2 * * * * ?</cron-expression>
 			</cron>
 		</trigger>
 	</schedule>
@@ -39,7 +39,7 @@
 				<job-name>JobB</job-name>
 				<job-group>ExampleGroup</job-group>
 				<!-- Execution every 5 seconds -->
-				<cron-expression>0/5 * * * * ?</cron-expression>
+				<cron-expression>0/1 * * * * ?</cron-expression>
 			</cron>
 		</trigger>
 	</schedule>
