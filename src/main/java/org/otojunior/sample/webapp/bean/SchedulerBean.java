@@ -18,6 +18,7 @@ import org.quartz.JobKey;
 import org.quartz.Scheduler;
 import org.quartz.SchedulerException;
 import org.quartz.Trigger;
+import org.quartz.Trigger.TriggerState;
 import org.quartz.ee.servlet.QuartzInitializerListener;
 import org.quartz.impl.StdSchedulerFactory;
 import org.quartz.impl.matchers.GroupMatcher;
@@ -89,6 +90,20 @@ public class SchedulerBean implements Serializable {
 	public void pauseNow(String jobName, String jobGroup) throws SchedulerException {
 		JobKey jobKey = new JobKey(jobName, jobGroup);
 		scheduler.pauseJob(jobKey);
+	}
+	
+	/**
+	 * Gte the trigger state.
+	 * @param jobName
+	 * @param jobGroup
+	 * @return
+	 * @throws SchedulerException
+	 */
+	public String getState(String jobName, String jobGroup) throws SchedulerException {
+		JobKey jobKey = new JobKey(jobName, jobGroup);
+		Trigger trigger = scheduler.getTriggersOfJob(jobKey).get(0);
+		TriggerState triggerState = scheduler.getTriggerState(trigger.getKey());
+		return triggerState.name();
 	}
 	
 	/**

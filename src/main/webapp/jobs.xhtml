@@ -42,6 +42,11 @@
 				<h:commandLink value="Pause"
 					action="#{scheduler.pauseNow(quartz.jobName, quartz.jobGroup)}" />
 			</h:column>
+			
+			<h:column>
+				<f:facet name="header">State</f:facet>
+				<h:outputText value="#{scheduler.getState(quartz.jobName, quartz.jobGroup)}"/>
+			</h:column>
 		</h:dataTable>
 	</h:form>
 </h:body>
