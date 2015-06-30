@@ -5,7 +5,6 @@ package org.otojunior.sample.webapp.bean;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -19,6 +18,7 @@ import org.quartz.Scheduler;
 import org.quartz.SchedulerException;
 import org.quartz.Trigger;
 import org.quartz.Trigger.TriggerState;
+import org.quartz.TriggerKey;
 import org.quartz.ee.servlet.QuartzInitializerListener;
 import org.quartz.impl.StdSchedulerFactory;
 import org.quartz.impl.matchers.GroupMatcher;
@@ -33,7 +33,7 @@ public class SchedulerBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private Scheduler scheduler;
-	private List<QuartzJob> quartzJobList = new ArrayList<>();
+	private List<QuartzJobsDto> quartzJobList = new ArrayList<>();
 	
 	/**
 	 * Initializes the been constructing the jobs list.
@@ -48,24 +48,17 @@ public class SchedulerBean implements Serializable {
 		 
 		//Get QuartzInitializerListener 
 		StdSchedulerFactory stdSchedulerFactory = (StdSchedulerFactory) servletContext.
-				getAttribute(QuartzInitializerListener.QUARTZ_FACTORY_KEY);
+			getAttribute(QuartzInitializerListener.QUARTZ_FACTORY_KEY);
 		
 		scheduler = stdSchedulerFactory.getScheduler();
 		
-		// loop jobs by group
+		// loop jobs by group, then get jobkey
 		for (String groupName : scheduler.getJobGroupNames()) {
-			
-			// get jobkey
 			GroupMatcher<JobKey> groupMatcher = GroupMatcher.jobGroupEquals(groupName);
 			for (JobKey jobKey : scheduler.getJobKeys(groupMatcher)) {
-				String jobName = jobKey.getName();
-				String jobGroup = jobKey.getGroup();
-
-				// get job's trigger
 				Trigger trigger = scheduler.getTriggersOfJob(jobKey).get(0);
-				Date nextFireTime = trigger.getNextFireTime();
-				
-				quartzJobList.add(new QuartzJob(jobName, jobGroup, nextFireTime));
+				QuartzJobsDto quartzJobDto = new QuartzJobsDto(jobKey, trigger.getKey(), trigger.getNextFireTime());
+				quartzJobList.add(quartzJobDto);
 			}
 		}
 	}
@@ -76,8 +69,7 @@ public class SchedulerBean implements Serializable {
 	 * @param jobGroup Job group.
 	 * @throws SchedulerException {@ink SchedulerException}
 	 */
-	public void resumeNow(String jobName, String jobGroup) throws SchedulerException {
-		JobKey jobKey = new JobKey(jobName, jobGroup);
+	public void resumeNow(JobKey jobKey) throws SchedulerException {
 		scheduler.resumeJob(jobKey);
 	}
 	
@@ -87,8 +79,7 @@ public class SchedulerBean implements Serializable {
 	 * @param jobGroup Job group.
 	 * @throws SchedulerException {@ink SchedulerException}
 	 */
-	public void pauseNow(String jobName, String jobGroup) throws SchedulerException {
-		JobKey jobKey = new JobKey(jobName, jobGroup);
+	public void pauseNow(JobKey jobKey) throws SchedulerException {
 		scheduler.pauseJob(jobKey);
 	}
 	
@@ -99,10 +90,8 @@ public class SchedulerBean implements Serializable {
 	 * @return
 	 * @throws SchedulerException
 	 */
-	public String getState(String jobName, String jobGroup) throws SchedulerException {
-		JobKey jobKey = new JobKey(jobName, jobGroup);
-		Trigger trigger = scheduler.getTriggersOfJob(jobKey).get(0);
-		TriggerState triggerState = scheduler.getTriggerState(trigger.getKey());
+	public String getState(TriggerKey triggerKey) throws SchedulerException {
+		TriggerState triggerState = scheduler.getTriggerState(triggerKey);
 		return triggerState.name();
 	}
 	
@@ -110,7 +99,7 @@ public class SchedulerBean implements Serializable {
 	 * Gets the @uartz Job List.
 	 * @return A list of Quartz's jobs.
 	 */
-	public List<QuartzJob> getQuartzJobList() {
+	public List<QuartzJobsDto> getQuartzJobList() {
 		return quartzJobList;
 	}
 }

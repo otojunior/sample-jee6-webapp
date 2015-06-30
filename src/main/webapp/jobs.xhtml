@@ -17,15 +17,13 @@
 			rowClasses="quartz-table-odd-row,quartz-table-even-row">
 
 			<h:column>
-				<!-- column header -->
 				<f:facet name="header">Job Name</f:facet>
-				<!-- row record -->
-    		  #{quartz.jobName}
+				<h:outputText value="#{quartz.jobKey.name}" />
     		</h:column>
 
 			<h:column>
 				<f:facet name="header">Job Group</f:facet>
-    		  #{quartz.jobGroup}
+				<h:outputText value="#{quartz.jobKey.group}" />
     		</h:column>
 
 			<h:column>
@@ -38,14 +36,14 @@
 			<h:column>
 				<f:facet name="header">Action</f:facet>
 				<h:commandLink value="Resume"
-					action="#{scheduler.resumeNow(quartz.jobName, quartz.jobGroup)}" />&nbsp;&nbsp;&nbsp;
+					action="#{scheduler.resumeNow(quartz.jobKey)}" />&nbsp;&nbsp;&nbsp;
 				<h:commandLink value="Pause"
-					action="#{scheduler.pauseNow(quartz.jobName, quartz.jobGroup)}" />
+					action="#{scheduler.pauseNow(quartz.jobKey)}" />
 			</h:column>
 			
 			<h:column>
 				<f:facet name="header">State</f:facet>
-				<h:outputText value="#{scheduler.getState(quartz.jobName, quartz.jobGroup)}"/>
+				<h:outputText value="#{scheduler.getState(quartz.triggerKey)}"/>
 			</h:column>
 		</h:dataTable>
 	</h:form>
