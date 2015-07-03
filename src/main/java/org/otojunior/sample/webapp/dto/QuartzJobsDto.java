@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.otojunior.sample.webapp.bean;
+package org.otojunior.sample.webapp.dto;
 
 import java.io.Serializable;
 import java.util.Date;
