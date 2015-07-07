@@ -7,11 +7,11 @@
         pool-name="default_pool" 
         enabled="true"
         use-java-context="true">
-        <connection-url>jdbc:h2:mem:default;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1</connection-url>
-        <driver>h2</driver>
+        <connection-url>jdbc:postgresql://localhost/01456231650</connection-url>
+        <driver>postgresql</driver>
         <security>
-            <user-name>sa</user-name>
-            <password>sa</password>
+            <user-name>01456231650</user-name>
+            <password>pg123</password>
         </security>
     </datasource>
 </datasources>
