@@ -162,6 +162,11 @@
 		    <artifactId>quartz-jobs</artifactId>
 		    <version>${dependency.version.quartz}</version>
 		</dependency>
+		<dependency>
+		    <groupId>org.postgresql</groupId>
+		    <artifactId>postgresql</artifactId>
+		    <version>9.2-1004-jdbc41</version>
+		</dependency>
 	</dependencies>
 
 	<build>
