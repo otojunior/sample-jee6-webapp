@@ -13,7 +13,10 @@ import org.slf4j.LoggerFactory;
 public class TesteLog {
 	private static final Logger LOG = LoggerFactory.getLogger(TesteLog.class);
 	
-	public static void main(String[] args) {
-		LOG.info("TesteLog::main:: Mensagem de teste do Log4J 1.2");
+	public static void main(String[] args) throws InterruptedException {
+		for (int i = 1; i <= 10; i++) {
+			LOG.info("xxxxx " + i);
+		}
+		Thread.sleep(5000);
 	}
 }

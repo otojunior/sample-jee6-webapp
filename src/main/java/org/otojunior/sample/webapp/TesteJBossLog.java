@@ -22,7 +22,7 @@ public class TesteJBossLog {
 	@PostConstruct
 	public void init() {
 		for (int i = 1; i <= 20; i++) {
-			LOG.info("TesteJBossLog::init " + i);
+			LOG.info("TesteJBossLog_init " + i);
 		}
 	}
 }
