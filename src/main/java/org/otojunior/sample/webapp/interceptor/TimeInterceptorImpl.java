@@ -43,12 +43,12 @@ public class TimeInterceptorImpl implements Serializable {
 			return context.proceed();
 		} finally {
 			stopWatch.stop();
-			long nano = stopWatch.getNanoTime();
+			long miliseconds = stopWatch.getTime();
 			
 			Tempo tempo = new Tempo();
 			tempo.setClasse(context.getTarget().getClass().getName());
 			tempo.setMetodo(context.getMethod().getName());
-			tempo.setTempo(nano);
+			tempo.setTempo(miliseconds);
 			tempo.setData(new Date());
 			
 			em.persist(tempo);
