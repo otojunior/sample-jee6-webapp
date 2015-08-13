@@ -16,8 +16,8 @@
 					</h:commandButton>
 				</p>
 				<p>
-					<h:panelGroup id="idPanelGroup" layout="block" rendered="true">
-						<h:dataTable id="idDataTable" var="i" value="#{clienteBean.clientes}">
+					<h:panelGroup layout="block" id="idPanelGroup">
+						<h:dataTable id="idDataTable" var="i" value="#{clienteBean.clientes}" rendered="#{not empty clienteBean.clientes}">
 							<f:facet name="header">
 								<h:outputText value="Relação de clientes" />
 							</f:facet>
