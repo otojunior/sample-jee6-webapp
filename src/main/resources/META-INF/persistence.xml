@@ -10,6 +10,10 @@
 			JBoss: jdbc/<nome do datasource>
 		-->
 		<jta-data-source>jdbc/sample-jee6-webapp-ds</jta-data-source>
+		
+		<class>org.otojunior.sample.webapp.entity.Cliente</class>
+		<class>org.otojunior.sample.webapp.entity.Tempo</class>
+		
 		<properties>
 			<!--
 				<property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
@@ -20,7 +24,7 @@
 			<property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.format_sql" value="true" />
-			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
+			<property name="hibernate.hbm2ddl.auto" value="validate" />
 			<property name="hibernate.ejb.naming_strategy" value="org.hibernate.cfg.ImprovedNamingStrategy" />
 			
 			<!-- Properties for EclipseLink (default provider for GlassFish) -->
