@@ -24,6 +24,8 @@ import org.slf4j.LoggerFactory;
 @Stateless
 public class ClientesDao implements Serializable {
 	private static final long serialVersionUID = 1L;
+	
+	@SuppressWarnings("unused")
 	private static final Logger LOG = LoggerFactory.getLogger(ClientesDao.class);
 
 	@PersistenceContext
@@ -35,13 +37,6 @@ public class ClientesDao implements Serializable {
 		
 		TypedQuery<Cliente> query = em.createNamedQuery(Cliente.QUERY_FIND_ALL, Cliente.class);
 		resultList = query.getResultList();
-		
-		// Simulando uma pesquisa demorada.
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			LOG.error("Erro de Sleep de Thread", e);
-		}
 		
 		return resultList;
 	}
