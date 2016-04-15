@@ -33,7 +33,7 @@
 		<dependency.version.commons-codec>1.9</dependency.version.commons-codec>
 		<dependency.version.jquery>2.1.1</dependency.version.jquery>
 		<dependency.version.javaee-api>6.0</dependency.version.javaee-api>
-		<plugin.version.java>1.7</plugin.version.java>
+		<plugin.version.java>1.8</plugin.version.java>
 		<plugin.version.maven-compiler-plugin>3.1</plugin.version.maven-compiler-plugin>
 		<plugin.version.maven-war-plugin>2.4</plugin.version.maven-war-plugin>
 		<plugin.version.maven-release-plugin>2.5</plugin.version.maven-release-plugin>
