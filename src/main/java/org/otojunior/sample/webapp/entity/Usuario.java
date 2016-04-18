@@ -22,11 +22,9 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 public class Usuario implements Serializable {
 	private static final long serialVersionUID = 7686135950453373822L;
 	
-	@XmlElement
-	private String nome;
-
-	@XmlElement
-	private Integer idade;
+	@XmlElement private String nome;
+	@XmlElement	private Integer idade;
+	@XmlElement private Double peso;
 	
 	/**
 	 * 
@@ -66,5 +64,19 @@ public class Usuario implements Serializable {
 	@Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
+	}
+
+	/**
+	 * @return the peso
+	 */
+	public Double getPeso() {
+		return peso;
+	}
+
+	/**
+	 * @param peso the peso to set
+	 */
+	public void setPeso(Double peso) {
+		this.peso = peso;
 	}
 }
