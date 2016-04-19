@@ -7,7 +7,6 @@ import java.io.Serializable;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -22,10 +21,18 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 public class Usuario implements Serializable {
 	private static final long serialVersionUID = 7686135950453373822L;
 	
-	@XmlElement private String nome;
-	@XmlElement	private Integer idade;
-	@XmlElement private Double peso;
+	private String nome;
+	private Integer idade;
+	private Double peso;
 	
+	/**
+	 * 
+	 * @return
+	 */
+	public Integer getIdade() {
+		return idade;
+	}
+
 	/**
 	 * 
 	 * @return
@@ -35,19 +42,10 @@ public class Usuario implements Serializable {
 	}
 
 	/**
-	 * 
-	 * @param nome
+	 * @return the peso
 	 */
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	/**
-	 * 
-	 * @return
-	 */
-	public Integer getIdade() {
-		return idade;
+	public Double getPeso() {
+		return peso;
 	}
 
 	/**
@@ -59,18 +57,11 @@ public class Usuario implements Serializable {
 	}
 	
 	/**
-	 * {@inheritDoc}
+	 * 
+	 * @param nome
 	 */
-	@Override
-	public String toString() {
-		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
-	}
-
-	/**
-	 * @return the peso
-	 */
-	public Double getPeso() {
-		return peso;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	/**
@@ -78,5 +69,13 @@ public class Usuario implements Serializable {
 	 */
 	public void setPeso(Double peso) {
 		this.peso = peso;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public String toString() {
+		return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
 	}
 }

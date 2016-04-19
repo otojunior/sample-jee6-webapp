@@ -26,13 +26,6 @@ public class UsuarioService {
 	private UsuarioDao dao;
 	
 	@GET
-	@Path("/usuarios")
-	@Produces(MediaType.APPLICATION_XML)
-	public List<Usuario> getUsuarios() {
-		return dao.getUsuarios();
-	}
-	
-	@GET
 	@Path("/usuariosxml")
 	@Produces(MediaType.APPLICATION_XML)
 	public List<Usuario> getUsuariosXml() {
