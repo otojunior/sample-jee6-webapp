@@ -26,7 +26,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 @XmlRootElement(name = "usuario")
 @Entity
 @NamedQueries({ 
-	@NamedQuery(name = Usuario.QUERY_FIND_ALL, query = "select u from Usuario u") 
+	@NamedQuery(name = Usuario.QUERY_FIND_ALL, query = "select u from Usuario u")
 })
 public class Usuario implements Serializable {
 	private static final long serialVersionUID = 7686135950453373822L;
