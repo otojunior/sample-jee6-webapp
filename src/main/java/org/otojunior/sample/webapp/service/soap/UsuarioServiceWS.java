@@ -6,7 +6,6 @@ package org.otojunior.sample.webapp.service.soap;
 import java.util.List;
 
 import javax.ejb.EJB;
-import javax.ejb.Stateless;
 import javax.jws.WebService;
 
 import org.otojunior.sample.webapp.dao.UsuarioDao;
