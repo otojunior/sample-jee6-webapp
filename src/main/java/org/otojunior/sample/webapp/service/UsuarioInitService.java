@@ -15,7 +15,8 @@ import org.apache.commons.lang3.RandomUtils;
 import org.otojunior.sample.webapp.entity.Usuario;
 
 /**
- * @author 01456231650
+ * Inicializa o banco de usuario (banco para testes da aplicação).
+ * @author Oto Junior
  *
  */
 @Singleton

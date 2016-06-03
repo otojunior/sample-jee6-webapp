@@ -19,7 +19,8 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
- * @author 01456231650
+ * Entidade Usuario.
+ * @author Oto Junior
  *
  */
 @XmlAccessorType(XmlAccessType.FIELD)

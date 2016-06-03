@@ -13,8 +13,8 @@ import javax.persistence.TypedQuery;
 import org.otojunior.sample.webapp.entity.Usuario;
 
 /**
- * @author 01456231650
- *
+ * DAO de Usuario.
+ * @author Oto Junior
  */
 @Stateless
 public class UsuarioDao {
