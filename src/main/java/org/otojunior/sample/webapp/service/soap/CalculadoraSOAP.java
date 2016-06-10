@@ -13,7 +13,7 @@ import javax.jws.WebService;
 public class CalculadoraSOAP implements ICalculadoraSOAP {
 
 	@Override
-	public int somar(int x, int y) {
+	public Integer somar(int x, int y) {
 		int r = x + y;
 		return r;
 	}
