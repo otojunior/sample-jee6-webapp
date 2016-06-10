@@ -10,7 +10,7 @@ import javax.jws.WebService;
  *
  */
 @WebService
-public class CalculadoraWS implements ICalculadoraWS {
+public class CalculadoraSOAP implements ICalculadoraSOAP {
 
 	@Override
 	public int somar(int x, int y) {

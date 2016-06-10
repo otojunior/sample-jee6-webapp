@@ -19,7 +19,7 @@ import org.otojunior.sample.webapp.entity.Usuario;
 @Local
 @Stateless
 @WebService
-public interface IUsuarioServiceWS {
+public interface IUsuarioSOAP {
 	
 	@WebMethod
 	public List<Usuario> getUsuarios();

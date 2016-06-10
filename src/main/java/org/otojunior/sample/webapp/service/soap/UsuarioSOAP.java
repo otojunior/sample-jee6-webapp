@@ -17,7 +17,7 @@ import org.otojunior.sample.webapp.entity.Usuario;
  */
 
 @WebService
-public class UsuarioServiceWS implements IUsuarioServiceWS {
+public class UsuarioSOAP implements IUsuarioSOAP {
 	@EJB
 	private UsuarioDao dao;
 	

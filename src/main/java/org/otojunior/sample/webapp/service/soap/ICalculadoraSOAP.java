@@ -11,7 +11,7 @@ import javax.jws.WebService;
  *
  */
 @WebService
-public interface ICalculadoraWS {
+public interface ICalculadoraSOAP {
 	@WebMethod public int somar(int x, int y);
 	@WebMethod public int subtrair(int x, int y);
 	@WebMethod public int multiplicar(int x, int y);
